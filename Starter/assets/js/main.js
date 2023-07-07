@@ -22,8 +22,12 @@ const scrollHeader = () => {
 };
 
 window.addEventListener('scroll', scrollHeader)
+
 // Open menu & search pop-up
 const menuToggleIcon = selectElement('#menu-toggle-icon');
+const formOpenBtn = selectElement('#search-icon');
+const formCloseBtn = selectElement('#form-close-btn');
+const searchContainer = selectElement('#search-form-container');
 
 const toggleMenu = () =>{
     const mobileMenu = selectElement('#menu');
@@ -34,7 +38,8 @@ const toggleMenu = () =>{
 menuToggleIcon.addEventListener('click', toggleMenu);
 
 // Open/Close search form popup
-
+formOpenBtn.addEventListener('click', () => searchContainer.classList.add('activated'));
+formCloseBtn.addEventListener('click', () => searchContainer.classList.remove('activated'));
 // -- Close the search form popup on ESC keypress
 
 // Switch theme/add to local storage
